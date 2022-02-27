@@ -31,5 +31,3 @@ RUN set -eux ; \
     apk del --no-network .utils-deps ; \
     # install node-gyp \
     npm install -g node-gyp
-
-USER node
