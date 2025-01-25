@@ -1,4 +1,4 @@
-FROM node:20-alpine3.17
+FROM node:22.13.1-alpine3.21
 
 LABEL maintainer="Andrea Maccis <andrea.maccis@gmail.com>"
 
