@@ -1,9 +1,17 @@
-FROM node:22.13.1-alpine3.21
+ARG node_version
+ARG alpine_version
+ARG libstemmer_version
+
+FROM node:${node_version}-alpine${alpine_version}
 
 LABEL maintainer="Andrea Maccis <andrea.maccis@gmail.com>"
 
-ARG libstemmer_version=2.2.0
+ARG node_version
+ARG alpine_version
+ARG libstemmer_version
 
+ENV NODE_VERSION=${node_version}
+ENV ALPINE_VERSION=${alpine_version}
 ENV LIBSTEMMER_VERSION=${libstemmer_version}
 
 COPY Makefile /usr/src/
@@ -20,7 +28,6 @@ RUN set -eux ; \
     # build libstemmer \
     cd /usr/src ; \
     curl -fsSL -o libstemmer_c.tar.gz https://snowballstem.org/dist/libstemmer_c-$LIBSTEMMER_VERSION.tar.gz ; \
-    echo "a61a06a046a6a5e9ada12310653c71afb27b5833fa9e21992ba4bdf615255de991352186a8736d0156ed754248a0ffb7b7712e8d5ea16f75174d1c8ddd37ba4a  /usr/src/libstemmer_c.tar.gz" | sha512sum -c ; \
     mkdir libstemmer_c ; \
     tar xfz /usr/src/libstemmer_c.tar.gz -C libstemmer_c --strip-components=1 ; \
     mv Makefile libstemmer_c ; \
