@@ -1,6 +1,6 @@
 # amaccis/node-libstemmer
 
-The purpouse of this image is to provide an Alpine Linux 3.15 environment with Node.js 17 onboard, [node-gyp](https://github.com/nodejs/node-gyp) globally installed and the [libstemmer](https://snowballstem.org/dist/libstemmer_c.tgz) compiled as a shared library.
+The purpouse of this image is to provide an Alpine Linux environment with Node.js onboard, [node-gyp](https://github.com/nodejs/node-gyp) globally installed and the [libstemmer](https://snowballstem.org/dist/libstemmer_c.tgz) compiled as a shared library.
 
 # Snowball and libstemmer
 
@@ -16,8 +16,6 @@ $ docker run --name node-libstemmer -v $PWD/:/home/node/app -d amaccis/node-libs
 
 ## Using docker-compose
 ```yaml
-version: '3.8'
-
 services:
   node:
     image: amaccis/node-libstemmer

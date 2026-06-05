@@ -1,5 +1,5 @@
-ARG node_version
-ARG alpine_version
+ARG node_version=22.22.3
+ARG alpine_version=3.23
 ARG libstemmer_version
 
 FROM node:${node_version}-alpine${alpine_version}
