@@ -1,10 +1,14 @@
-ARG node_version=22.22.3
-ARG alpine_version=3.23
+ARG node_version=24.18.0
+ARG alpine_version=3.24
 ARG libstemmer_version
 
 FROM node:${node_version}-alpine${alpine_version}
 
-LABEL maintainer="Andrea Maccis <andrea.maccis@gmail.com>"
+LABEL org.opencontainers.image.authors="Andrea Maccis <andrea.maccis@gmail.com>"
+LABEL org.opencontainers.image.source="https://github.com/amaccis/docker-node-libstemmer"
+LABEL org.opencontainers.image.description="Docker Alpine Linux environment with Node.js onboard, node-gyp globally installed and the libstemmer compiled as a shared library."
+LABEL org.opencontainers.image.licenses="MIT"
+
 
 ARG node_version
 ARG alpine_version
