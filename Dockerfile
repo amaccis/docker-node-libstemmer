@@ -1,4 +1,4 @@
-ARG node_version=24.18.0
+ARG node_version=22.23.3
 ARG alpine_version=3.24
 ARG libstemmer_version
 
